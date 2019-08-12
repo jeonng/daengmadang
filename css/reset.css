@@ -50,5 +50,6 @@ img{
    vertical-align: top;
 }
 a{
-   text-decoration: none;
+	text-decoration: none;
+	color:#444444;
 }

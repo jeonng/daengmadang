@@ -12,14 +12,20 @@
    <link rel="stylesheet" href="css/main.css">
    <!--JS-->
    <script src="js/all.min.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+   <script src="js/main.js"></script>
 </head>
 <body>
    <header>
-      <h1><a href="" class="logo">댕댕마당</a></h1>
-       <ul class="top_icon">
-          <li><a href="">bars</a></li>
-          <li><a href="">shop</a></li>
-       </ul>
+      <div class="header_top">
+         <h1><a href="" class="logo sprite">댕댕마당</a></h1>
+         <ul class="top_icon">
+            <li><a href=""><i class="fas fa-bars"></i></a></li>
+            <li><a href=""><i class="fas fa-shopping-bag"></i></a></li>
+         </ul>
+      </div>
        <div class="top_category">
           <ul>
              <li><a href="">홈</a></li>
@@ -105,14 +111,20 @@
       </div>
    </aside>
    <div class="banner">
-
+      <ul>
+         <li class="slide1"></li>
+         <li class="slide2"></li>
+         <li class="slide3"></li>
+      </ul>
    </div>
    <main>
       <section class="recommend">
          <h2>댕주인 추천 상품</h2>
-         <a href=""><img src="" alt=""></a>
-         <a href=""><img src="" alt=""></a>
-         <a href=""><img src="" alt=""></a>
+         <div class="rec_content">
+            <a href=""><img src="images/추천1.png" alt="추천상품 1"></a>
+            <a href=""><img src="images/추천2.png" alt="추천상품 2"></a>
+            <a href=""><img src="images/추천3.png" alt="추천상품 3"></a>
+         </div>
       </section>
       <section class="public">
          <h2>주간 TOP 5</h2>
@@ -120,7 +132,7 @@
             <li>
                <div>
                   <p>01</p>
-                  <a href=""><img src="" alt=""></a> </a>                 
+                  <a href=""><img src="images/top1.png" alt=""></a> </a>                 
                </div>
                <div class="desc">
                   <p class="sale"></p>
@@ -129,8 +141,8 @@
             </li>
             <li>
                <div>
-                  <p>01</p>
-                  <a href=""><img src="" alt=""></a> </a>                 
+                  <p>02</p>
+                  <a href=""><img src="images/top2.png" alt=""></a> </a>                 
                </div>
                <div class="desc">
                   <p class="sale"></p>
