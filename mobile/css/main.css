@@ -37,6 +37,7 @@ header h1 {
 .logo {
    width: 130px; height: 35px;
    display: inline-block;
+   background-position: 0 -35px;
 }
 header .top_icon {
    display: flex;
@@ -45,6 +46,22 @@ header .top_icon {
 header .top_icon svg {
    color:#595959;
    font-size: 27px;
+}
+header .top_icon .fa-shopping-bag+span{
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background: #46A34A;
+   display: inline-block;
+   position: absolute;
+   top: 50%;
+   right: 24.5px;
+   transform: translateY(-20%);
+   color:#fff;
+   font-size: 12px;
+   font-weight: 400;
+   text-align: center;
+   line-height: 15px;
 }
 header .top_category{
    height: 50px;
@@ -96,14 +113,43 @@ header .top_category ul {
 main .recommend .rec_content{
    display: flex;
    flex-wrap: wrap;
-   justify-content: center;
+   justify-content: space-around;
 }
-main .recommend .rec_content a:first-child {
-   margin-right: 10px;
-   width: 163px; height: 151px;
+main .recommend .rec_content a:nth-child(-n+2) {
+   width: 162.5px; height: 150px;
 }
 main .recommend .rec_content a:last-child {
    margin-top: 10px;
+   width: 335px;height: 150px;
+}
+main .recommend .rec_content a img {
+   display: block;
+   height: 100%; width: 100%;
+}
+/*MAIN-public*/
+main .public li div {
+   text-align: center;
+   width: 162.5px;
+}
+main .public li .rank{
+   border:2px solid #46A34A;
+   border-radius: 5px;
+   height: 150px;
+}
+main .public li img {
+   width: 80%; height: 80%;
+}
+main .public li .rank p {
+   font-size: 22px;
+   font-weight: 700;
+}
+main .public li .desc h3 {
+   font-size: 15px;
+   font-weight: 500;
+}
+main .public li .desc p {
+   font-size: 12px;
+   font-weight: 300;
 }
 /*FOOTER*/
 /*ASIDE*/
