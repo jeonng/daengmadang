@@ -6,6 +6,7 @@ body {
    font-family: 'Noto Sans KR', sans-serif;
    color:#444;
    font-size: 16px;
+   font-weight: 400;
 }
 /*COMMON*/
 .sprite {
@@ -31,7 +32,7 @@ main section h2:before{
 }
 header h1 {
    position: absolute;
-   left:50%; 
+   left:50%; bottom:7px;
    transform: translateX(-50%);
 }
 .logo {
@@ -39,24 +40,29 @@ header h1 {
    display: inline-block;
    background-position: 0 -35px;
 }
+header h1 img {
+   width: 100%;height: 100%;
+}
 header .top_icon {
    display: flex;
    justify-content: space-between;
 }
 header .top_icon svg {
    color:#595959;
-   font-size: 27px;
+   font-size: 25px;
 }
-header .top_icon .fa-shopping-bag+span{
+header .top_icon li:nth-child(2) {
+   position: relative;
+}
+header .top_icon .fa-shopping-cart+span{
    width: 15px;
    height: 15px;
    border-radius: 50%;
    background: #46A34A;
    display: inline-block;
    position: absolute;
-   top: 50%;
-   right: 24.5px;
-   transform: translateY(-20%);
+   top: 20%; left:60%;
+   transform: translate(-50%,-50%);
    color:#fff;
    font-size: 12px;
    font-weight: 400;
@@ -66,60 +72,74 @@ header .top_icon .fa-shopping-bag+span{
 header .top_category{
    height: 50px;
 }
-header .top_category a {
-   line-height: 50px;
-}
 header .top_category ul {
    display: flex;
    justify-content: space-around;
+   align-items: center;
 }
+header .top_category a{
+   margin:10px 0;
+}
+header .top_category a.here {
+   width: 30px; height: 30px;
+   background: #46A34A;
+   border-radius: 50%;
+   color:#fff;
+   display: inline-block;
+   line-height: 30px;
+   text-align: center;
+}
+
 /*BANNER*/
 .banner {
    position: relative;
 }
-.banner ul li {
-   background: no-repeat center center/cover;
+/* .banner ul li {
    height: 250px;
-}
-.banner .slide1 {
-   background-image: url('../images/banner.png');
-}
-.banner .slide2 {
-   background-image: url('../images/banner.png');
-}
-.banner .slide3 {
-   background-image: url('../images/banner.png');
+} */
+.banner ul li img {
+   width: auto; height: auto;
+   max-width: 100%;
+   min-height: 250px;
 }
 /*pager*/
 .banner .bx-controls{
    position: absolute;
    left:50%; bottom: 15px;
    transform: translateX(-50%);
-
 }
 .banner .bx-pager {
    display: flex;
 }
 .banner .bx-pager .bx-pager-item{
-   width: 13px; height: 8px;
+   margin: 0 2px;
+}
+.banner .bx-pager .bx-pager-item a {
+   width: 15px; height: 8px;
    border-radius: 2px;
    background: #fff;
-   text-indent: -999em;
    display: inline-block;
-   margin: 0 2px;
+   text-indent: -999em;
+   transition: 0.2s;
+}
+.banner .bx-pager .bx-pager-item a.active {
+   background: #46A34A;
+   width: 25px;
 }
 
 /*MAIN-recommend*/
 main .recommend .rec_content{
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-around;
+   justify-content: center;
+}
+main .recommend .rec_content a{
+   margin:0 4px 10px;
 }
 main .recommend .rec_content a:nth-child(-n+2) {
    width: 162.5px; height: 150px;
 }
 main .recommend .rec_content a:last-child {
-   margin-top: 10px;
    width: 335px;height: 150px;
 }
 main .recommend .rec_content a img {
@@ -129,7 +149,7 @@ main .recommend .rec_content a img {
 /*MAIN-public*/
 main .public{
    text-align: center;
-   margin: 0 10px 0 10px;
+   margin: 0 10px 0 20px;
 }
 main .public li {
    text-align: center;
@@ -149,7 +169,7 @@ main .public li img {
    width: 100%; height: 100%;
 }
 main .public li .rank p {
-   font-size: 24px;
+   font-size: 22px;
    font-weight: 700;
    position: absolute;
    left:10px; top:5px;
@@ -185,7 +205,9 @@ main .public .more_read a {
 main .review {
    width: 100%;
    background: #E7E7E7;
+   position: relative;
 }
+
 main .review h2 {
    padding:30px 0;
    margin: 0;
@@ -196,17 +218,28 @@ main .review ul li {
    text-align: center;
 }
 .review .review_img {
-   width: 40%;height: 156px;
+   max-width: 40%; min-height: 156px;
    margin-right: 10px;
 }
 .review .review_img img {
+   max-width: 100%; min-height: 156px;
    width: 100%; height: 100%;
 }
 .review .review_desc {
-   width:60%; height: 156px;
+   min-width:60%; min-height: 156px;
+   width:100%;
    background: #fff;
    border-radius: 5px;
+   
+   box-sizing: border-box;
+   position: relative;
+}
+.review .review_desc > div {
+   width:100%;
+   position: absolute;
    padding: 20px;
+   top:50%; left:50%; 
+   transform: translate(-50%, -50%);
    box-sizing: border-box;
 }
 .review .review_desc h3 {
@@ -214,7 +247,7 @@ main .review ul li {
    font-weight: 500;
    margin-bottom: 10px;
 }
-.review .review_desc > p{
+.review .review_desc > div >p{
    font-size: 17px;
    font-family: 'sd-misaeng';
 }
@@ -232,8 +265,102 @@ main .review ul li {
 .review .review_desc .review_info p {
    font-size: 10px;
 }
+.review .bx-controls {
+   position: absolute;
+   top:55px; right:20px;
+}
+.review .bx-controls .bx-pager{
+   display: flex;
+}
+.review .bx-pager-item a {
+   width: 12px;height: 12px;
+   background: #fff;
+   display: inline-block;
+   border-radius: 50%;
+   text-indent: -999em;
+   margin-left: 10px;
+}
+.review .bx-pager-item a.active {
+   background:#46A34A;
+}
+/*MAIN-sub_icon*/
+main .sub_icon{
+   margin: 30px 0;
+   padding: 0 10px;
+}
+main .sub_icon ul {
+   display: flex;
+   justify-content: space-around;
+}
+.sub_icon ul li a{
+   display: inline-block;
+   width: 70px; height: 70px;
+   background: #46a34a;
+   border-radius: 50%;
+   color: #fff;
+   font-size: 35px;
+   text-align: center;
+   line-height: 65px;
+}
+.sub_icon ul li p{
+   text-align: center;
+   color:#464646;
+   margin: 10px 0;
+}
 /*FOOTER*/
+footer .footer_top{
+   background: #EFEFEF;
+}
+footer .footer_top .footer_logo a{
+   width: 23px; height: 30px;
+   display: inline-block;
+}
+footer .footer_top img{
+   width: 100%; height: 100%;
+}
+footer .footer_top p {
+   font-size: 11px;
+   line-height: 15px;
+   color:#595959;
+}
+footer .footer_top {
+   display:flex;
+   justify-content: space-around;
+   flex-wrap:wrap;
+   padding: 10px 10px;
+}
+footer .footer_bottom {
+   background: #46a34a;
+   padding: 10px 0;
+   text-align: center;
+}
+footer .footer_bottom p {
+   color:#fff;
+   font-size: 10px;
+   font-weight: 300;
+}
 /*ASIDE*/
 aside {
-   display: none;
+   position: fixed;
+   width: 80%;
+   height: 100%;
+   z-index: 1;
+   background: #fff;
+}
+aside div.aside_top{
+   text-align: center;
+}
+aside h3 {
+   font-size: 16px;
+   font-weight: 500;
+}
+aside div.aside_top button {
+   width: 100px; height: 30px; 
+   border:none;
+   border-radius: 3px;
+   background: #46a34a;
+   color:#fff;
+   cursor: pointer;
+   padding:0;
+   font-size: 12px;
 }
