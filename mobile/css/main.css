@@ -14,14 +14,32 @@ body {
    text-indent: -9999em;
 }
 main section h2 {
+   position: relative;
    font-size: 20px;
    font-weight: 700;
    margin: 30px 0;
    text-align: center;
+   overflow: hidden;
 }
 main section h2:before{
    content:'';
-
+   position: absolute;
+   width: auto;
+   border-bottom:1px solid #bcbcbc;
+   left:0;  top:50%; 
+   transform: translateY(-50%);
+}
+main section h2:after{
+   content:'';
+   position: absolute;
+   width: auto;
+   border-bottom:1px solid #bcbcbc;
+   right:0;  top:50%; 
+   transform: translateY(-50%);
+}
+.bar:before {
+   content:'|';
+   font-size: 13px;
 }
 /*HEADER*/
 .header_top {
@@ -151,6 +169,9 @@ main .public{
    text-align: center;
    margin: 0 10px 0 20px;
 }
+/* main .public bx-wrapper {
+   margin: 0 10px 0 20px;
+} */
 main .public li {
    text-align: center;
 }
@@ -340,21 +361,54 @@ footer .footer_bottom p {
    font-weight: 300;
 }
 /*ASIDE*/
+.aside_open aside {
+   left:0;
+}
+.aside_open .aside_bg{
+   visibility: visible;
+   opacity: 1;
+}
+ .aside_bg {
+   position: fixed;
+   left:0; right:0; top:0; bottom:0;
+   background: rgba(0,0,0,.75);
+   z-index: 1;
+   visibility: hidden;
+   opacity: 0;
+}
 aside {
    position: fixed;
+   left:-100%;
    width: 80%;
    height: 100%;
-   z-index: 1;
+   z-index: 2;
    background: #fff;
+   transition: 0.8s;
 }
+aside .close {
+   width: 85px; height: 85px;
+   background: #fff;
+   position: absolute;
+   border-radius: 50%;
+   right:-40px; top:30px;
+}
+aside .close .fa-times{
+   color:#46a34a;
+   font-size: 26px;;
+   position: absolute;
+   top:50%; right:20px;
+   transform: translateY(-50%);
+}
+
 aside div.aside_top{
    text-align: center;
 }
-aside h3 {
-   font-size: 16px;
+ aside h3 {
+   font-size: 18px;
    font-weight: 500;
+   margin-top: 30px;
 }
-aside div.aside_top button {
+ aside div.aside_top button {
    width: 100px; height: 30px; 
    border:none;
    border-radius: 3px;
@@ -363,4 +417,100 @@ aside div.aside_top button {
    cursor: pointer;
    padding:0;
    font-size: 12px;
+   margin: 20px 0;
+}
+ .aside_top ul {
+   display: flex;
+   justify-content: center;
+}
+ .aside_top ul a {
+   font-size: 13px;
+   font-weight: 300;
+   margin:0 5px; 
+}
+ .aside_top ul li:before{
+   font-weight: 300;
+}
+ 
+ aside form {
+   position: relative;
+   text-align: center;
+   margin: 20px 0;
+}
+ aside form input {
+   width: 80%;height: 40px;
+   border:none;
+   background: #E4E4E4;
+   padding:0 30px;
+   box-sizing: border-box;
+   font-size: 16px;
+}
+ aside form button{
+   position: absolute;
+   top:50%; right:20%;
+   transform: translateY(-50%);
+   border:none;
+   background: none;
+   cursor: pointer;
+   font-size: 18px;
+   padding: 0;
+}
+ aside form button svg {
+   color: #4B4B4B;
+}
+ aside .nav .main_menu>li{
+   position: relative;
+   border-top: 1px solid #ddd;
+}
+ aside .nav .main_menu>li:last-child{
+   border-bottom: 1px solid #ddd;
+}
+ aside .nav .main_menu>li>div>a {
+   font-size: 18px;
+   font-weight: 500;
+   margin: 20px 40px;
+   display: inline-block;
+}
+ aside .nav .main_menu>li>div>a.click{
+   color:#46A34A;
+   font-weight: 700;
+}
+ aside .nav .main_menu>li>div>svg.click{
+   transform: rotate(90deg);
+   color:#46A34A;
+}
+ aside .nav .main_menu .sub_menu{
+   text-align: center;
+   background: #f4f4f4;
+   padding: 10px 0;
+}
+ aside .nav .main_menu .sub_menu a {
+   color: #464646;
+   line-height: 32px;
+}
+ aside .nav .main_menu svg{
+   position: absolute;
+   top:20px; right: 40px;
+   font-size: 18px;
+}
+aside .nav> a {
+   position: absolute;
+   color:#46a34a;
+   border-bottom: 1px solid #46A34A;
+   left:50%;
+   transform: translateX(-50%);
+   margin: 100px 0;
+}
+
+/*탑버튼*/
+.top_btn {
+   position: absolute;
+   width: 40px; height: 50px;
+   background: #46a34a;
+   text-align: center;
+}
+.top_btn svg {
+   font-size: 35px;
+   color:#fff;
+   line-height: 40px;
 }

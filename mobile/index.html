@@ -17,26 +17,43 @@
    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
    <script src="js/main.js"></script>
 </head>
-<body>  
+<body class="">  
    <aside>
+      <div class="close"><a class="times"><i class="fas fa-times"></i></a></div>
       <div class="aside_top">
          <h3>로그인을 해주세요</h3>
          <button>로그인</button>
          <button>회원가입</button>
+         <ul>
+            <li><a href="">주문조회</a></li>
+            <li class="bar"><a href="">관심상품</a></li>
+            <li class="bar"><a href="">장바구니</a></li>
+         </ul>
       </div>
-      <ul>
-         <li>주문조회</li>
-         <li>관심상품</li>
-         <li>장바구니</li>
-      </ul>
+      
       <form action="">
-         <input type="text" name="" id="">
-         <button>search</button>
+         <input type="text" name="" id="" placeholder="검색">
+         <button> <i class="fas fa-search"></i></button>
       </form>
       <div class="nav">
          <ul class="main_menu">
             <li>
-               <a href="">사료</a>
+               <div>
+                  <a href="">사료</a> 
+                  <i class="fas fa-chevron-right"></i>
+               </div>
+               <ul class="sub_menu">
+                  <li><a href="">건식</a></li>
+                  <li><a href="">습식</a></li>
+                  <li><a href="">생식</a></li>
+                  <li><a href="">수제</a></li>
+               </ul>  
+            </li>
+            <li>
+               <div>
+                  <a href="">간식ㆍ영양제</a>
+                  <i class="fas fa-chevron-right"></i>
+               </div>
                <ul class="sub_menu">
                   <li><a href="">건식</a></li>
                   <li><a href="">습식</a></li>
@@ -45,16 +62,10 @@
                </ul>
             </li>
             <li>
-               <a href="">간식<i class="fas fa-circle"></i>영양제</a>
-               <ul class="sub_menu">
-                  <li><a href="">건식</a></li>
-                  <li><a href="">습식</a></li>
-                  <li><a href="">생식</a></li>
-                  <li><a href="">수제</a></li>
-               </ul>
-            </li>
-            <li>
-               <a href="">위생<i class="fas fa-circle"></i>배변</a>
+               <div>
+                  <a href="">위생ㆍ배변</a>
+                  <i class="fas fa-chevron-right"></i>
+               </div>
                <ul class="sub_menu">
                      <li><a href="">건식</a></li>
                      <li><a href="">습식</a></li>
@@ -63,36 +74,50 @@
                </ul>
             </li>
             <li>
-               <a href="">미용<i class="fas fa-circle"></i>목욕</a>
+               <div>
+                  <a href="">미용ㆍ목욕</a>
+                <i class="fas fa-chevron-right"></i>
+               </div>
                <ul class="sub_menu">
                      <li><a href="">건식</a></li>
                      <li><a href="">습식</a></li>
                      <li><a href="">생식</a></li>
                      <li><a href="">수제</a></li>
                </ul>
+
             </li>
             <li>
-               <a href="">이동<i class="fas fa-circle"></i>외출</a>
+               <div>
+                  <a href="">이동ㆍ외출</a>
+                  <i class="fas fa-chevron-right"></i>
+               </div>
                <ul class="sub_menu">
                      <li><a href="">건식</a></li>
                      <li><a href="">습식</a></li>
                      <li><a href="">생식</a></li>
                      <li><a href="">수제</a></li>
                </ul>
+               
             </li>
             <li>
-               <a href="">장난감<i class="fas fa-circle"></i>훈련</a>
+               <div>
+
+                  <a href="">장난감ㆍ훈련</a>
+                  <i class="fas fa-chevron-right"></i>
+               </div>
                <ul class="sub_menu">
                      <li><a href="">건식</a></li>
                      <li><a href="">습식</a></li>
                      <li><a href="">생식</a></li>
                      <li><a href="">수제</a></li>
                </ul>
+               
             </li>
          </ul>
          <a href="">고객센터<i class="fas fa-headset"></i></a>
       </div>
    </aside>
+   <div class="aside_bg"></div>
    <header>
       <div class="header_top">
          <h1>
@@ -101,7 +126,7 @@
             </a>
          </h1>
          <ul class="top_icon">
-            <li><a href=""><i class="fas fa-bars"></i></a></li>
+            <li><a class="bars"><i class="fas fa-bars"></i></a></li>
             <li>
                <a href="">
                      <i class="fas fa-shopping-cart"></i>
@@ -119,7 +144,6 @@
           </ul>
        </div>
    </header>
- 
    <div class="banner">
       <ul>
          <li class="slide1">
@@ -316,6 +340,9 @@
          </ul>
       </section>
    </main>
+   <div class="top_btn">
+         <i class="fas fa-arrow-up"></i>
+   </div>
    <footer>
       <div class="footer_top">
   
