@@ -48,13 +48,40 @@ $(function(){
    $aside_menu.click(function(e){
       e.preventDefault();
       $(this).toggleClass('upDown');
-      $(this).find('a').toggleClass('click');
-      $(this).find('svg').toggleClass('click');
-      if($(this).hasClass('upDown')){
-         $(this).siblings('ul').slideDown(350);
-      }else{
-          $(this).siblings('ul').slideUp(350);
-      }
+      $(this).parent('li').siblings('li').find('ul').slideUp();
+      $(this).parent('li').siblings('li').find('div').removeClass('upDown');
+      $(this).next().slideToggle();
    });   
 
+   // 탑버튼 
+   var top_btn = $('.top_btn'),
+       $window = $(window);
+
+      $window.scroll(function(){
+         if($(this).scrollTop() >=400){
+            top_btn.fadeIn(700);
+         }else{
+            top_btn.fadeOut(700);
+         }
+      });
+
+      top_btn.click(function(e){
+         e.preventDefault();
+         $('html').animate({scrollTop:0},500,'easeOutQuart');
+      });
+
+   //카테고리 정렬 
+
+   var $list_btn = $('.select li');
+
+   $list_btn.click(function(){
+      $list_btn.find('svg').removeClass('choose');
+      $(this).find('svg').addClass('choose');
+      if($list_btn.find('.fa-th-list').hasClass('choose')){
+         $('main').addClass('list');
+      }else{
+         $('main').removeClass('list');
+      }
+   });
+       
 });
