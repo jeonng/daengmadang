@@ -9,6 +9,11 @@ body {
    font-weight: 400;
 }
 /*COMMON*/
+h1 {
+   font-size: 28px;
+   color:#46A34A;
+   font-family: TmonMonsoriBlack;
+}
 .sprite {
    background:url('../images/sprite.png') no-repeat;
    text-indent: -9999em;
@@ -596,7 +601,7 @@ main .contents li {
    width:50%;
    margin: 15px 0;
 }
-main .contents li:
+
 main .contents .content_img{
    width: 163px; height: 170px;
    border:1px solid #cacaca;
@@ -671,10 +676,117 @@ main.list .contents .content_img img {
 }
 main.list .contents .content_info{
    position: absolute;
-   top:50%; left:130px;
+   top:50%; left:115px;
    transform: translateY(-50%);
    text-align: left;
 }
 main.list  .content_info p:nth-of-type(2){
    font-size: 13px;
+}
+
+/*로그인 페이지 login*/
+.main_lg h2 {
+   text-indent: -999em;
+   display: none;
+}
+.login_top {
+   position: relative;
+   text-align: center;
+}
+main .login_top div{
+   background: #567AA4;
+   border-radius: 50px;
+   width: 196px; height: 43px;
+   color:#fff;
+   font-size: 16px;
+   font-weight: 300;
+   line-height: 40px;
+   margin: 60px auto 0;
+   position: relative;
+}
+main .login_top div:after {
+   content:'';
+   border-style:solid;
+   border-width:14px 12px;
+   border-color:#567AA4 transparent transparent  transparent;
+   position: absolute;
+   top:98%; left:50%;
+   transform:translateX(-50%);
+}
+.login_top img {
+   margin: 30px 0;
+}
+.login_con{
+   margin:0 30px;
+}
+.login_con form label {
+   display: none;
+}
+.login_con ul {
+   display: flex;
+}
+.login_con li a {
+   font-size:18px ;
+   margin-left: 10px;
+}
+.login_con li a.mode {
+   color:#46A34A;
+}
+.login_con input {
+   width: 100%;
+   height: 50px;
+   border:2px solid #c4c4c4;
+   border-radius: 6px;
+   margin: 10px 0;
+   padding: 0 15px;
+   box-sizing: border-box;
+   font-size: 15px;
+}
+.login_con input::placeholder{
+   color:#c4c4c4;
+}
+.login_con input[type=checkbox]{
+   width: 15px; height: 15px;
+   margin-left: 15px;
+   border:none;
+   background: #C4C4C4;
+   vertical-align: middle;
+}
+.login_con .remember{
+   display: inline-block;
+   font-size: 13px;
+   color:#464646;
+   font-weight: 300;
+}
+.login_con .login_btn{
+   display: flex;
+   justify-content: space-between;
+}
+.login_con button{
+   width: 49%;
+   height: 35px;
+   border-radius: 5px;
+   background: #46a34a;
+   border:none;
+   color:#fff;
+   font-size: 16px;
+   line-height: 34px;
+   margin: 10px 0;
+}
+.forgot{
+   text-align: center;
+   margin: 40px 0;
+}
+.forgot a{
+   font-weight: 300;
+   text-decoration: underline;
+   display: inline-block;
+}
+#nonmember{
+   display: none;
+ 
+}
+.bottom0{
+   position: fixed;
+   bottom:0;right:0; left:0;
 }

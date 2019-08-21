@@ -83,5 +83,20 @@ $(function(){
          $('main').removeClass('list');
       }
    });
+
+   //로그인 
+
+   var member_mode =$('.login_con ul li');
+
+   member_mode.click(function(){
+      member_mode.find('a').removeClass('mode');
+      $(this).find('a').addClass('mode');
+   });
+
+
+
+
+
+
        
 });
