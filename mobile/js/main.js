@@ -86,15 +86,60 @@ $(function(){
 
    //로그인 
 
-   var member_mode =$('.login_con ul li');
+   var tab_login =$('.login_con'),
+       member_mode =$('.login_con ul li'),
+       $login_input =$('.lg_join .input-group'),
+       $login_btn =$('.login_con button.goBtn');
+
+   tab_login.tabs();
 
    member_mode.click(function(){
       member_mode.find('a').removeClass('mode');
+      $login_input.removeClass('fail');
       $(this).find('a').addClass('mode');
+      if($(this).find('a').attr('href')=='#nonmember'){
+         $('.login_top div').html('비회원 이신가요?!');
+      }else{
+         $('.login_top div').html('로그인 해주세요!');
+      }
+   });
+   //로그인 오류 
+   
+   $login_btn.on("click",function(e){
+      e.preventDefault();
+      $login_input.find('input').each(function(idx){
+         var lg_value = $(this).val();
+
+         if(lg_value==''){
+            $(this).parent('div').addClass('fail');
+            $(this).siblings('div').addClass('error');
+         }else{
+            $(this).parent('div').removeClass('fail');      
+            $(this).siblings('div').removeClass('error');
+         }
+
+      });
+      
+      $login_input.find('input').click(function(){
+         $(this).parent('div').removeClass('fail');
+         $(this).siblings('div').removeClass('error');
+      });  
+
    });
 
 
+   //가입하기 
 
+   var join_input = $('.join_con input'),
+       sex_input =$('.join_con .sex input');
+
+   join_input.click(function(){
+      $(this).addClass('label_top');
+
+      if(!sex_input.val()==''){
+         $(this).siblings('div').addClass('check');
+      }
+   });
 
 
 

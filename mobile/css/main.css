@@ -9,7 +9,7 @@ body {
    font-weight: 400;
 }
 /*COMMON*/
-h1 {
+h1 a{
    font-size: 28px;
    color:#46A34A;
    font-family: TmonMonsoriBlack;
@@ -603,14 +603,16 @@ main .contents li {
 }
 
 main .contents .content_img{
-   width: 163px; height: 170px;
+   width:90%; height: 170px;
    border:1px solid #cacaca;
    border-radius: 5px;
-   display: inline-block;
+  position: relative;
 }
 main .contents .content_img img {
-   width: 90%; height: 100%;
-   display: inline-block;
+   width:80px; height: 110px;
+   position: absolute;
+   left:50%; top:50%;
+   transform: translate(-50%,-50%);
 }
 .contents .content_info {
    text-align: center;
@@ -664,19 +666,17 @@ main.list .contents ul li {
    width: 100%;
 }
 main.list .contents .content_img {
-   width: 100%; height: 140px;
-   display: flex;
+   width: 100%;
 }
 main.list .contents .content_img img {
-   position: absolute;
-   top:50%; left:0px;
+   margin: 0 20px;
+   left:0px;
    transform: translateY(-50%);
-   width: 132px; height: 138px;
    z-index: -1;
 }
 main.list .contents .content_info{
    position: absolute;
-   top:50%; left:115px;
+   top:50%; left:120px;
    transform: translateY(-50%);
    text-align: left;
 }
@@ -685,7 +685,7 @@ main.list  .content_info p:nth-of-type(2){
 }
 
 /*로그인 페이지 login*/
-.main_lg h2 {
+.lg_join h2 {
    text-indent: -999em;
    display: none;
 }
@@ -698,10 +698,9 @@ main .login_top div{
    border-radius: 50px;
    width: 196px; height: 43px;
    color:#fff;
-   font-size: 16px;
-   font-weight: 300;
+   font-size: 15px;
    line-height: 40px;
-   margin: 60px auto 0;
+   margin: 40px auto 0;
    position: relative;
 }
 main .login_top div:after {
@@ -713,28 +712,35 @@ main .login_top div:after {
    top:98%; left:50%;
    transform:translateX(-50%);
 }
-.login_top img {
+.lg_join img {
    margin: 30px 0;
+   width: 40px; height: 50px;
 }
-.login_con{
+.lg_join{
    margin:0 30px;
 }
-.login_con form label {
-   display: none;
+.lg_join form label {
+   color:#c4c4c4;
+   font-weight: 300;
+   font-size: 14px;
+   position: absolute;
+   top:50%; left:20px;
+   transform: translateY(-50%);
 }
-.login_con ul {
+.lg_join ul {
    display: flex;
+   margin: 10px 0;
 }
-.login_con li a {
-   font-size:18px ;
+.lg_join li a {
+   font-size:16px ;
    margin-left: 10px;
 }
-.login_con li a.mode {
+.lg_join li a.mode {
    color:#46A34A;
 }
-.login_con input {
+.lg_join input {
    width: 100%;
-   height: 50px;
+   height: 50px; 
    border:2px solid #c4c4c4;
    border-radius: 6px;
    margin: 10px 0;
@@ -742,27 +748,73 @@ main .login_top div:after {
    box-sizing: border-box;
    font-size: 15px;
 }
-.login_con input::placeholder{
-   color:#c4c4c4;
+.lg_join .input-group.fail input{
+   border-color:rgba(211,60,60,.4);
+   box-shadow: 0 0 3px rgba(255,0,0,0.4);
+   animation: shake 0.4s;
 }
-.login_con input[type=checkbox]{
-   width: 15px; height: 15px;
-   margin-left: 15px;
-   border:none;
-   background: #C4C4C4;
-   vertical-align: middle;
+.lg_join .input-group label {
+   opacity: 1;
+   transition: 0.4s;
 }
-.login_con .remember{
-   display: inline-block;
+.lg_join .input-group.fail label {
+   opacity: 0;
+}
+@keyframes shake {
+   0%{transform:translateX(2px);}
+   30%{transform:translateX(-2px);}
+   50%{transform:translateX(2px);}
+   70%{transform:translateX(-2px);}
+   100%{transform:translateX(0px);}
+}
+.lg_join .input-group{
+   position: relative;
+}
+.lg_join .input-group div{
+   position: absolute;
+   top:50%; left:20px;
+   transform: translateY(-50%);
+   color:rgba(227,34,34,.7);
+   transition:0.3s;
+   opacity: 0;
+   font-size: 14px;
+}
+.lg_join .input-group div.error {
+   opacity: 1;
+}
+.lg_join input[type="checkbox"]{
+   display: none;
+}
+.lg_join .remember {
+   height: 10px;
+   margin:10px 0;
+}
+.lg_join .remember label{
+   position: absolute;
    font-size: 13px;
    color:#464646;
    font-weight: 300;
+   top:0; left:10px;
 }
-.login_con .login_btn{
+.lg_join .remember label:before{
+   content:'';
+   margin: 0 5px 0 2px;
+   padding:3px;
+   width: 8px; height: 8px;
+   display: inline-block;
+   border: 2px solid #46a34a;;
+   border-radius: 5px;
+   background-clip: content-box;
+   vertical-align: middle;
+}
+.lg_join input[type="checkbox"]:checked + label:before {
+   background-color: #46A34A;
+}
+.lg_join .login_btn{
    display: flex;
    justify-content: space-between;
 }
-.login_con button{
+.lg_join button{
    width: 49%;
    height: 35px;
    border-radius: 5px;
@@ -781,12 +833,61 @@ main .login_top div:after {
    font-weight: 300;
    text-decoration: underline;
    display: inline-block;
+   font-size: 12px;
 }
-#nonmember{
+
+#nonmember button {
+   width:100%;
+}
+
+/*회원가입*/
+.join_con input{
+   margin: 15px 0;
+}
+.join_con input.label_top + label{
+   top:0px; 
+   color:#444;
+   font-weight: 400;
+} 
+.join_con .sex {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   margin-bottom: 15px;
+}
+.join_con .sex div{
+   position: relative;
+   color:#c4c4c4;
+   opacity: 1;
+   width: 100%;
+   font-weight: 300;
+}
+.join_con .sex div.check{
+   color:#444;
+   font-weight: 400;
+}
+.join_con .sex input:checked + label {
+   background: #46a34a;
+   color:#fff;
+   border-color: #46a34a;
+}
+.join_con .sex label {
+   width:48%; line-height: 42px;
+   position: relative;
+   top:0; left:0;
+   transform: none;
+   display: inline-block;
+   border:2px solid #c4c4c4;
+   border-radius: 6px;
+   background: #fff;
+   color:#c4c4c4;
+   text-align: center;
+   font-size: 16px;
+}
+.join_con .sex input{
    display: none;
- 
 }
-.bottom0{
-   position: fixed;
-   bottom:0;right:0; left:0;
+.join_con .go_join{
+   width: 100%; height: 40px;
+   margin:0 0 50px 0;
 }
