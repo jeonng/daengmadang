@@ -141,7 +141,33 @@ $(function(){
       }
    });
 
+   //가입 오류 
+   var $join_btn =$('.go_join'),
+       $join_input = $('.join_con .input-group');
+       
+   $join_btn.click(function(e){   
+      e.preventDefault();
+     
+      $join_input.find('input').each(function(){
+         var $join_val = $(this).val();
+         var $sex_val = $('.join_con .sex input:checked').val();
 
+         if($join_val == '' || $sex_val == undefined){
+            $(this).parent('div').addClass('fail');
+            $(this).siblings('div').addClass('error');
+         }else{
+            $(this).parent('div').removeClass('fail');
+            $(this).siblings('div').removeClass('error');
+         }
+
+      });
+   });
+
+
+   $join_input.find('input').click(function(){
+      $(this).parent('div').removeClass('fail');
+      $(this).siblings('div').removeClass('error');
+   });
 
        
 });

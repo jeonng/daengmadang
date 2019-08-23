@@ -606,10 +606,12 @@ main .contents .content_img{
    width:90%; height: 170px;
    border:1px solid #cacaca;
    border-radius: 5px;
-  position: relative;
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);
 }
 main .contents .content_img img {
-   width:80px; height: 110px;
+   width:80px; height: 120px;
    position: absolute;
    left:50%; top:50%;
    transform: translate(-50%,-50%);
@@ -625,6 +627,7 @@ main .contents .content_img img {
 .contents .content_info p{
    font-size: 12px;
    margin: 8px 0;
+   line-height: 15px;
 }
 .contents .content_info span {
    width: 45px; height: 13px;
@@ -747,6 +750,7 @@ main .login_top div:after {
    padding: 0 15px;
    box-sizing: border-box;
    font-size: 15px;
+   transition:0.4s;
 }
 .lg_join .input-group.fail input{
    border-color:rgba(211,60,60,.4);
@@ -775,7 +779,7 @@ main .login_top div:after {
    top:50%; left:20px;
    transform: translateY(-50%);
    color:rgba(227,34,34,.7);
-   transition:0.3s;
+   transition:0.4s;
    opacity: 0;
    font-size: 14px;
 }
@@ -842,7 +846,7 @@ main .login_top div:after {
 
 /*회원가입*/
 .join_con input{
-   margin: 15px 0;
+   margin: 13px 0;
 }
 .join_con input.label_top + label{
    top:0px; 
@@ -883,11 +887,31 @@ main .login_top div:after {
    color:#c4c4c4;
    text-align: center;
    font-size: 16px;
+   transition:0.4s;
 }
 .join_con .sex input{
    display: none;
 }
 .join_con .go_join{
    width: 100%; height: 40px;
-   margin:0 0 50px 0;
+   margin:20px 0 50px 0;
+}
+.join_con .input-group.fail input{
+   animation :none;
+}
+
+.join_con .sex.fail div {
+   color:rgba(227,34,34,.7);
+}
+.join_con .sex.fail label{
+   opacity: 1;
+   border-color:rgba(211,60,60,.4);
+   box-shadow: 0 0 3px rgba(255,0,0,0.4);
+}
+.join_con .petname.fail input{
+   border-color: #c4c4c4;
+   box-shadow: none;
+}
+.join_con .petname.fail label {
+   opacity: 1;
 }

@@ -7,7 +7,7 @@
    <meta name= "keyword" content="dog, shop">
    <meta name= "description" content="dog shopping mall">
    <meta name= "robots" content="index, follow">
-   <title>회원가입 | 댕댕마당</title>
+   <title>사료 - 카길뉴트리나 | 댕댕마당</title>
    <!--CSS-->
    <link rel="stylesheet" href="css/main.css">
    <!--JS-->
@@ -23,8 +23,8 @@
       <div class="close"><a class="times"><i class="fas fa-times"></i></a></div>
       <div class="aside_top">
          <h3>로그인을 해주세요</h3>
-         <button>로그인</button>
-         <button>회원가입</button>
+         <button onClick="location.href='login.html'">로그인</button>
+         <button onClick="location.href='join.html'">회원가입</button>
          <ul>
             <li><a href="">주문조회</a></li>
             <li class="bar"><a href="">관심상품</a></li>
@@ -44,7 +44,7 @@
                   <i class="fas fa-chevron-right"></i>
                </div>
                <ul class="sub_menu">
-                  <li><a href="category.html">건식</a></li>
+                  <li><a href="">건식</a></li>
                   <li><a href="">습식</a></li>
                   <li><a href="">생식</a></li>
                   <li><a href="">수제</a></li>
@@ -122,10 +122,12 @@
    <header>
       <div class="header_top">
          <h1>
-            <a href="join.html">회원가입</a>    
+            <a href="index.html" class="logo">
+               <img src="images/logo.png" alt="">
+            </a>
          </h1>
          <ul class="top_icon">
-            <li><a href="index.html" class="back"><i class="fas fa-chevron-left"></i></a></li>
+            <li><a class="bars"><i class="fas fa-bars"></i></a></li>
             <li>
                <a href="">
                      <i class="fas fa-shopping-cart"></i>
@@ -134,51 +136,37 @@
             </li>
          </ul>
       </div>
-   </header>
-
-   <main class="lg_join">
-      <section class="login_top">
-         <h2>회원가입 아이콘</h2>
-         <img src="images/small_logo.png" alt="" class="logo_icon">
+   </header>   
+   <main>
+      <section class="detail_top">
+               <div class="content_img">
+                  <img src="images/food.jpg" alt="">
+               </div>
+               <div class="content_info">
+                     <h3>[카길 뉴트리나]</h3>
+                     <p>건강백서 애견 사료 - 말티즈 2Kg</p>
+                     <span>인기</span>
+                     <span>추천</span>
+                     <p class="price">12,100원</p>
+               </div>
+               <div class="icon">
+                  <span>
+                     <i class="fas fa-share-square"></i>
+                  </span>
+                  <span>
+                     <i class="far fa-heart"></i>
+                     <i class="fas fa-heart"></i>
+                  </span>
+               </div>
       </section>
-      <section class="join_con">
-            <form action="#">
-                     <div class="input-group">
-                        <input type="text" id="user-id" required>
-                        <label for="user-id">아이디(필수)</label>
-                        <div>* 아이디를 입력해주세요</div>
-                     </div>
-                     <div class="input-group">
-                        <input type="password" id="user-pw" required>
-                        <label for="user-pw">비밀번호(필수)</label>
-                        <div>* 비밀번호를 입력해주세요</div>
-                     </div>          
-                     <div class="input-group ">
-                        <input type="password" id="onemore-pw" required> 
-                        <label for="onemore-pw">비밀번호 확인(필수)</label>
-                        <div class="">* 비밀번호가 일치하지 않습니다.</div>
-                     </div>
-                     <div class="input-group">
-                        <input type="tel" id="user-ph" required>
-                        <label for="user-ph">전화번호(-없이 입력)(필수)</label>
-                        <div>* 전화번호를 입력해주세요</div>
-                     </div>
-                     <div class="input-group sex">
-                        <div>회원 성별(필수)</div>
-                        <input type="radio" id="female" name="sex" value="여성">
-                        <label for="female">여성</label>
-                        <input type="radio" id="male" name="sex" value="남성" >
-                        <label for="male">남성</label>
-                     </div>
-                     <div class="input-group petname">
-                        <input type="password" id="nonuser-pw">
-                        <label for="nonuser-pw">애완견 이름(선택)</label>
-                     </div>
-                     <button type="submit" class="go_join">가입하기</button>
-               </form>
+      <section class="detail_info">
+
       </section>
    </main>
 
+   <a href="#" class="top_btn">
+         <i class="fas fa-arrow-up"></i>
+   </a>
    <footer>
       <div class="footer_top">
   
