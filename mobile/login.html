@@ -28,13 +28,13 @@
          <ul>
             <li><a href="">주문조회</a></li>
             <li class="bar"><a href="">관심상품</a></li>
-            <li class="bar"><a href="">장바구니</a></li>
+            <li class="bar"><a href="cart.html">장바구니</a></li>
          </ul>
       </div>
       
-      <form action="">
-         <input type="text" name="" id="" placeholder="검색">
-         <button> <i class="fas fa-search"></i></button>
+      <form action="#">
+         <input type="text" name="#" placeholder="검색">
+         <button onClick="location.href='search.html'"> <i class="fas fa-search"></i></button>
       </form>
       <div class="nav">
          <ul class="main_menu">
@@ -148,11 +148,11 @@
             <li><a href="#member" class="mode">회원</a></li>
             <li><a href="#nonmember">비회원</a></li>
          </ul>
-         <form action="" id="member">
+         <form action="#" id="lg_form">
             <div id="member">
                <div class="input-group">
-                  <label for="user-id" >아이디</label>
-                  <input type="text">
+                  <label for="user-id">아이디</label>
+                  <input type="text" id="user-id">
                   <div>* 아이디를 입력해주세요</div>
                </div>
                <div class="input-group">
@@ -160,17 +160,17 @@
                   <input type="password" id=user-pw >
                   <div>* 비밀번호를 입력해주세요</div>
                </div>
-            </div>
-            <div class="input-group remember">
-               <input type="checkbox" name="remember_id" id="remember_Id">
-               <label for="remember_Id">아이디 저장</label>
-            </div>
-            <div class="login_btn">
-               <button type="submit" class="goBtn">로그인</button>
-               <button onClick="location.href='join.html'">회원가입</button>
+               <div class="input-group remember">
+                  <input type="checkbox" name="remember_id" id="remember_Id">
+                  <label for="remember_Id">아이디 저장</label>
+               </div>
+               <div class="login_btn">
+                  <button type="submit" class="goBtn">로그인</button>
+                  <button type="button" onClick="location.href='join.html'">회원가입</button>
+               </div>
             </div>
          </form>
-         <form action="" id="nonmember">
+         <form action="#" id="nonmember">
             <div>
                <div class="input-group">
                   <label for="nonnum">주문번호</label>

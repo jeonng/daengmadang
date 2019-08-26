@@ -9,6 +9,7 @@
    <meta name= "robots" content="index, follow">
    <title>사료 - 카길뉴트리나 | 댕댕마당</title>
    <!--CSS-->
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
    <link rel="stylesheet" href="css/main.css">
    <!--JS-->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -19,111 +20,109 @@
    <script src="js/main.js"></script>
 </head>
 <body class="">  
-   <aside>
-      <div class="close"><a class="times"><i class="fas fa-times"></i></a></div>
-      <div class="aside_top">
-         <h3>로그인을 해주세요</h3>
-         <button onClick="location.href='login.html'">로그인</button>
-         <button onClick="location.href='join.html'">회원가입</button>
-         <ul>
-            <li><a href="">주문조회</a></li>
-            <li class="bar"><a href="">관심상품</a></li>
-            <li class="bar"><a href="">장바구니</a></li>
-         </ul>
-      </div>
-      
-      <form action="">
-         <input type="text" name="" id="" placeholder="검색">
-         <button> <i class="fas fa-search"></i></button>
-      </form>
-      <div class="nav">
-         <ul class="main_menu">
-            <li>
-               <div>
-                  <a href="">사료</a> 
-                  <i class="fas fa-chevron-right"></i>
-               </div>
-               <ul class="sub_menu">
-                  <li><a href="">건식</a></li>
-                  <li><a href="">습식</a></li>
-                  <li><a href="">생식</a></li>
-                  <li><a href="">수제</a></li>
-               </ul>  
-            </li>
-            <li>
-               <div>
-                  <a href="">간식ㆍ영양제</a>
-                  <i class="fas fa-chevron-right"></i>
-               </div>
-               <ul class="sub_menu">
-                  <li><a href="">건식</a></li>
-                  <li><a href="">습식</a></li>
-                  <li><a href="">생식</a></li>
-                  <li><a href="">수제</a></li>
-               </ul>
-            </li>
-            <li>
-               <div>
-                  <a href="">위생ㆍ배변</a>
-                  <i class="fas fa-chevron-right"></i>
-               </div>
-               <ul class="sub_menu">
-                     <li><a href="">건식</a></li>
+      <aside>
+         <div class="close"><a class="times"><i class="fas fa-times"></i></a></div>
+         <div class="aside_top">
+            <h3>로그인을 해주세요</h3>
+            <button onClick="location.href='login.html'">로그인</button>
+            <button onClick="location.href='join.html'">회원가입</button>
+            <ul>
+               <li><a href="#">주문조회</a></li>
+               <li class="bar"><a href="#">관심상품</a></li>
+               <li class="bar"><a href="cart.html">장바구니</a></li>
+            </ul>
+         </div>
+         <form action="#">
+            <input type="text" name="#" placeholder="검색">
+            <button type="button" onclick="location.href='search.html'"><i class="fas fa-search"></i></button>
+         </form>
+         <div class="nav">
+            <ul class="main_menu">
+               <li>
+                  <div>
+                     <a href="">사료</a> 
+                     <i class="fas fa-chevron-right"></i>
+                  </div>
+                  <ul class="sub_menu">
+                     <li><a href="list.html">건식</a></li>
                      <li><a href="">습식</a></li>
                      <li><a href="">생식</a></li>
                      <li><a href="">수제</a></li>
-               </ul>
-            </li>
-            <li>
-               <div>
-                  <a href="">미용ㆍ목욕</a>
-                <i class="fas fa-chevron-right"></i>
-               </div>
-               <ul class="sub_menu">
-                     <li><a href="">건식</a></li>
-                     <li><a href="">습식</a></li>
-                     <li><a href="">생식</a></li>
-                     <li><a href="">수제</a></li>
-               </ul>
-
-            </li>
-            <li>
-               <div>
-                  <a href="">이동ㆍ외출</a>
-                  <i class="fas fa-chevron-right"></i>
-               </div>
-               <ul class="sub_menu">
-                     <li><a href="">건식</a></li>
-                     <li><a href="">습식</a></li>
-                     <li><a href="">생식</a></li>
-                     <li><a href="">수제</a></li>
-               </ul>
-               
-            </li>
-            <li>
-               <div>
-
-                  <a href="">장난감ㆍ훈련</a>
-                  <i class="fas fa-chevron-right"></i>
-               </div>
-               <ul class="sub_menu">
-                     <li><a href="">건식</a></li>
-                     <li><a href="">습식</a></li>
-                     <li><a href="">생식</a></li>
-                     <li><a href="">수제</a></li>
-               </ul>
-               
-            </li>
-         </ul>
-         <a href="">고객센터<i class="fas fa-headset"></i></a>
-      </div>
-   </aside>
+                  </ul>  
+               </li>
+               <li>
+                  <div>
+                     <a href="">간식ㆍ영양제</a>
+                     <i class="fas fa-chevron-right"></i>
+                  </div>
+                  <ul class="sub_menu">
+                     <li><a href="">껌</a></li>
+                     <li><a href="">육포/사시미</a></li>
+                     <li><a href="">건조간식</a></li>
+                     <li><a href="">수제간식</a></li>
+                     <li><a href="">영양보호제</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <div>
+                     <a href="">위생ㆍ배변</a>
+                     <i class="fas fa-chevron-right"></i>
+                  </div>
+                  <ul class="sub_menu">
+                        <li><a href="">배변판/패드</a></li>
+                        <li><a href="">기저귀</a></li>
+                        <li><a href="">탈취/소독</a></li>
+                        <li><a href="">해충방지용품</a></li>
+                        <li><a href="">눈/귀/치아</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <div>
+                     <a href="">미용ㆍ목욕</a>
+                     <i class="fas fa-chevron-right"></i>
+                  </div>
+                  <ul class="sub_menu">
+                        <li><a href="">샴푸/린스</a></li>
+                        <li><a href="">에센스</a></li>
+                        <li><a href="">미용가위/브러쉬</a></li>
+                        <li><a href="">발톱관리</a></li>
+                  </ul>
+   
+               </li>
+               <li>
+                  <div>
+                     <a href="">이동ㆍ외출</a>
+                     <i class="fas fa-chevron-right"></i>
+                  </div>
+                  <ul class="sub_menu">
+                        <li><a href="">이동가방</a></li>
+                        <li><a href="">목줄/가슴줄</a></li>
+                        <li><a href="">분변처리</a></li>
+                  </ul>
+                  
+               </li>
+               <li>
+                  <div>
+   
+                     <a href="">장난감ㆍ훈련</a>
+                     <i class="fas fa-chevron-right"></i>
+                  </div>
+                  <ul class="sub_menu">
+                        <li><a href="">장난감</a></li>
+                        <li><a href="">훈련용품</a></li>
+                  </ul>
+                  
+               </li>
+            </ul>
+            <a href="">고객센터<i class="fas fa-headset"></i></a>
+         </div>
+      </aside>
    <div class="aside_bg"></div>
    <header>
       <div class="header_top">
          <h1>
             <a href="index.html" class="logo">
-               <img src="images/logo.png" alt="">
+               로고이미지
             </a>
          </h1>
          <ul class="top_icon">
@@ -139,31 +138,67 @@
    </header>   
    <main>
       <section class="detail_top">
-               <div class="content_img">
-                  <img src="images/food.jpg" alt="">
-               </div>
-               <div class="content_info">
-                     <h3>[카길 뉴트리나]</h3>
-                     <p>건강백서 애견 사료 - 말티즈 2Kg</p>
-                     <span>인기</span>
-                     <span>추천</span>
-                     <p class="price">12,100원</p>
-               </div>
-               <div class="icon">
-                  <span>
-                     <i class="fas fa-share-square"></i>
-                  </span>
-                  <span>
-                     <i class="far fa-heart"></i>
-                     <i class="fas fa-heart"></i>
-                  </span>
-               </div>
+         <a href=""></a>
+         <h2 class="hidden">건강백서 말티즈 상세페이지</h2>      
+            <ul class="content_img">
+               <li><img src="images/food.jpg" alt=""></li>
+               <li><img src="images/food_info1.png" alt=""></li>
+               <li><img src="images/food_info2.png" alt=""></li>
+            </ul> 
+            <div class="content_info">
+                  <h3>[카길 뉴트리나]</h3>
+                  <p>건강백서 애견 사료 - 말티즈</p>
+                  <span>인기</span>
+                  <span>추천</span>
+                  <p class="price">12,100원</p>
+            </div>
+            <div class="icon">
+               <a href="">
+                  <i class="fas fa-share-square"></i>
+               </a>
+               <a href="" class="heart">
+                  <i class="far fa-heart"></i>
+                  <i class="fas fa-heart"></i>
+               </a>
+            </div>
       </section>
       <section class="detail_info">
-
+         <h2 class="hidden">상품정보</h2>
+         <ul>
+            <li class="check"><a href="#product_info" >상세정보</a></li>
+            <li><a href="#product_review">상품후기</a></li>
+            <li><a href="#product_question">상품문의</a></li>
+         </ul>
+         <div id="product_info">
+            <img src="images/product-info.jpg" alt="">
+         </div>
+         <div id="product_review">후기</div>
+         <div id="product_question">문의</div>
       </section>
    </main>
-
+   <div class="bg"></div>
+   <div class="purchase">
+      <a href="#">구매하기</a>
+      <form action="#" class="option">
+         <a href="#"><i class="fas fa-chevron-down"></i></a>
+         <h3>[카길 뉴트리나] 건강백서 애견사료</h3>
+         <select name="#" id="#">
+            <option value="2Kg">건강백서 애견사료 말티즈 2Kg</option>
+            <option value="4Kg">건강백서 애견사료 말티즈 4Kg</option>
+            <option value="6Kg">건강백서 애견사료 말티즈 6Kg</option>
+         </select>
+         <label for="count">수량</label><br>
+         <input name="count" id="count" class="ui-spinner-input" value="1" readonly>
+         <div class="total">
+            <p>총 구매가</p>
+            <p>12,100원(1개)</p>
+         </div>
+         <div class="button">
+            <button type="submit">구매하기</button>
+            <button type="button" onclick="location.href='cart.html'">장바구니</button>
+         </div>
+      </form>
+   </div>
    <a href="#" class="top_btn">
          <i class="fas fa-arrow-up"></i>
    </a>

@@ -169,5 +169,64 @@ $(function(){
       $(this).siblings('div').removeClass('error');
    });
 
-       
+   //DETAIL PAGE 
+   var $detail_slide = $('.detail_top ul');
+
+      $detail_slide.bxSlider({
+         controls: false
+      });
+
+   //하트누르기 
+   var $heart_click = $('.detail_top .icon a.heart');
+
+   $heart_click.click(function(e){
+      e.preventDefault();
+      $(this).toggleClass('click');
+   });
+
+   //상세정보, 후기, 문의 
+   var $detail_tab =$('.detail_info');
+   var $detail_btn = $('.detail_info ul li');
+
+   $detail_tab.tabs();
+
+   $detail_btn.click(function(){
+      $(this).addClass('check').siblings().removeClass('check');
+   });
+
+   //spinner
+   var $count = $('#count');
+
+   $count.spinner({
+      min:1
+   });
+
+   //구매하기
+
+   var $purchase_btn = $('.purchase > a '),
+       $close_purchase = $('.purchase form >a ');
+   
+       $purchase_btn.click(function(e){
+          e.preventDefault();
+         $(this).siblings('form').addClass('purchase_up');
+         $('div.bg').addClass('black');
+       }); 
+
+       $close_purchase.click(function(e){
+          e.preventDefault();
+         $(this).parent('form').removeClass('purchase_up');
+         $('div.bg').removeClass('black');
+       });
+
+       //장바구니 전체선택 
+   var $allselect =$('.all-select');
+
+   $allselect.click(function(){
+      $(this).toggleClass('all');
+      if($(this).hasClass('all')){
+         $('input[name="select-cart"]:checkbox').attr('checked',true);
+      }else {
+         $('input[name="select-cart"]:checkbox').attr('checked',false);
+      }
+   });
 });
