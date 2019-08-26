@@ -219,14 +219,27 @@ $(function(){
        });
 
        //장바구니 전체선택 
-   var $allselect =$('.all-select');
+   var $allselect =$('.all-select'),
+       $selectCart = $('input[name="select-cart"]:checkbox');
 
    $allselect.click(function(){
       $(this).toggleClass('all');
       if($(this).hasClass('all')){
-         $('input[name="select-cart"]:checkbox').attr('checked',true);
+         $selectCart.prop('checked',true);
       }else {
-         $('input[name="select-cart"]:checkbox').attr('checked',false);
+         $selectCart.prop('checked',false);
       }
    });
+
+   
+   var $value = 0;
+
+   $('.chk').click(function(){
+      if($selectCart.filter(':checked').length == 2){
+         $allselect.siblings().prop('checked',true);
+      }else{
+         $allselect.siblings().prop('checked',false);
+      }
+   });
+
 });

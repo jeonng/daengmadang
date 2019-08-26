@@ -14,7 +14,7 @@ h1 {
 }
 h1 a.logo {
    text-indent: -9999em;
-   background: url('../images/logo.png') no-repeat left top/cover;
+   background: url('../images/logo@x2.png') no-repeat left top/cover;
    width: 130px; height: 35px;
    display: inline-block;
 }
@@ -129,9 +129,8 @@ header .top_category a.here {
 /* .banner ul li {
    height: 250px;
 } */
-.banner ul li img {
-   width: auto; height: auto;
-   max-width: 100%;
+.banner ul li img { 
+   width: 100%; 
    min-height: 250px;
 }
 /*pager*/
@@ -1092,7 +1091,7 @@ main .login_top div:after {
    font-weight: 400;
    -webkit-appearance: none;
    -moz-appearance: none;
-   background:url('../images/chev_down.png') no-repeat 95%;
+   background:url('../images/chev_down@x2.png') no-repeat 95%;
    background-size: 20px;
    box-sizing: border-box;
    font-size: 16px;
@@ -1127,11 +1126,11 @@ main .login_top div:after {
    left:5px;
 } 
 .ui-spinner-up .ui-icon {
-   background: url('../images/plus.png') no-repeat ;
+   background: url('../images/plus@x2.png') no-repeat ;
    background-size: 16px;
 }
 .ui-spinner-down .ui-icon{
-   background: url('../images/minus.png')  no-repeat ;
+   background: url('../images/minus@x2.png')  no-repeat ;
    background-size: 16px;
 }
 .ui-spinner-up:active .ui-icon {
