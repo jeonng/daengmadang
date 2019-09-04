@@ -217,7 +217,21 @@ $(function(){
          $(this).parent('form').removeClass('purchase_up');
          $('div.bg').removeClass('black');
        });
+      // 수량 올리면 가겨증가 
+   var $product_Count =$('.ui-button-icon');
 
+   $product_Count.click(function(){
+      var count_num = $('#count').attr('aria-valuenow');
+      var total_money = 12100*count_num;
+
+      $('.money_count').text(addComma(total_money)+'원('+count_num+'개)');
+
+   });
+   function addComma(num) {
+      var regexp = /\B(?=(\d{3})+(?!\d))/g;
+      return num.toString().replace(regexp, ',');
+   }
+       
        //장바구니 전체선택 
    var $allselect =$('.all-select'),
        $selectCart = $('input[name="select-cart"]:checkbox');

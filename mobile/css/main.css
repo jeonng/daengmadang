@@ -14,7 +14,7 @@ h1 {
 }
 h1 a.logo {
    text-indent: -9999em;
-   background: url('../images/logo@x2.png') no-repeat left top/cover;
+   background: url('../images/logo@2x.png') no-repeat left top/cover;
    width: 130px; height: 35px;
    display: inline-block;
 }
@@ -1091,7 +1091,7 @@ main .login_top div:after {
    font-weight: 400;
    -webkit-appearance: none;
    -moz-appearance: none;
-   background:url('../images/chev_down@x2.png') no-repeat 95%;
+   background:url('../images/chev_down@2x.png') no-repeat 95%;
    background-size: 20px;
    box-sizing: border-box;
    font-size: 16px;
@@ -1126,25 +1126,20 @@ main .login_top div:after {
    left:5px;
 } 
 .ui-spinner-up .ui-icon {
-   background: url('../images/plus@x2.png') no-repeat ;
+   background: url('../images/plus@2x.png') no-repeat ;
    background-size: 16px;
 }
 .ui-spinner-down .ui-icon{
-   background: url('../images/minus@x2.png')  no-repeat ;
+   background: url('../images/minus@2x.png')  no-repeat ;
    background-size: 16px;
 }
-.ui-spinner-up:active .ui-icon {
-   background-image: url('../images/plus.png');
+.ui-spinner-up:active .ui-icon , .ui-spinner-up:hover .ui-icon{
+   background-image: url('../images/plus@2x.png');
 }
-.ui-spinner-down:active .ui-icon{
-   background-image: url('../images/minus.png');
+.ui-spinner-down:active .ui-icon, .ui-spinner-down:hover .ui-icon{
+   background-image: url('../images/minus@2x.png');
 }
-.ui-spinner-up:hover .ui-icon{
-   background-image: url('../images/plus.png');
-}
-.ui-spinner-down:hover .ui-icon{
-   background-image: url('../images/minus.png');
-}
+ 
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-button:hover .ui-icon, .ui-button:focus .ui-icon , .ui-button:active .ui-icon{
    border:none;
 }
