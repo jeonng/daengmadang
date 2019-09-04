@@ -1017,7 +1017,7 @@ main .login_top div:after {
 .detail_top .icon a:nth-of-type(2).click svg:nth-child(2){
    display: block;
 }
-.detail_info ul {
+.detail_info >ul {
    display: flex;
    justify-content: space-around;
    border-top:1px solid #ccc;
@@ -1028,6 +1028,80 @@ main .login_top div:after {
 }
 .detail_info ul li.check a{
    border-bottom:3px solid #46A34A;
+}
+.ui-widget.ui-widget-content{
+   border:none;
+}
+.ui-corner-all{
+   border-radius: 0;
+}
+.ui-tabs{
+   padding: 0;
+}
+#product_review ul > li{
+   position: relative;
+   padding: 20px;
+   margin: 5px 0;
+   border:1px solid #BCBCBC;
+   border-radius: 5px;
+
+}
+#product_review ul li p {
+   font-family: 'Noto Sans KR', sans-serif;
+}
+#product_review ul > li .user{
+   font-size: 13px;
+   font-weight: 500;
+}
+#product_review ul > li p:nth-of-type(2){
+   text-align: center;
+   padding: 30px 0;
+   font-weight: 300;
+}
+#product_review ul > li span{
+   position: absolute;
+   font-size: 20px;
+   color:#46a34a;
+   right:30px; bottom:10px;
+   cursor: pointer;
+}
+#product_question{
+   position: relative;
+   font-family: 'Noto Sans KR', sans-serif;
+}
+#product_question .tab_box{
+   position: absolute;
+   left:50%; 
+   transform: translateX(-50%);
+   width: 80%;
+   border:1px solid #BCBCBC;
+   border-radius: 5px;
+}
+#product_question .tab_box li{
+   width: 50%;
+   text-align: center;
+   height: 30px;
+   float:left;
+}
+#product_question .tab_box a {
+   line-height: 30px;
+   font-size: 14px;
+}
+#product_question .tab_box .here {
+   background: #46a34a;
+}
+#product_question .tab_box .here a{
+   color:#fff;
+}
+#faq .tit{
+   position: absolute;
+   left:50%; 
+   transform: translateX(-50%);
+   width: 70%;
+   padding:10px 20px;
+   background: #ededed;
+   border-radius: 5px;
+   border:1px solid #5b5b5b;
 }
  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover,.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited{
    color:#444;

@@ -175,6 +175,12 @@ $(function(){
       $detail_slide.bxSlider({
          controls: false
       });
+   //상품 문의 
+      var qna_tab = $('#product_question .tab_box li');
+      qna_tab.click(function(e){
+         e.preventDefault();
+         $(this).addClass('here').siblings().removeClass('here');
+      });
 
    //하트누르기 
    var $heart_click = $('.detail_top .icon a.heart');
