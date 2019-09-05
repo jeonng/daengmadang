@@ -1,5 +1,8 @@
 $(function(){
-
+   //팝업 창 닫기 
+   $('.noticebox span').click(function(){
+      $(this).parent('.noticebox').css({display: 'none'});
+   });
    //배너 슬라이드
    $('.banner ul').bxSlider({
       controls: false
@@ -175,12 +178,6 @@ $(function(){
       $detail_slide.bxSlider({
          controls: false
       });
-   //상품 문의 
-      var qna_tab = $('#product_question .tab_box li');
-      qna_tab.click(function(e){
-         e.preventDefault();
-         $(this).addClass('here').siblings().removeClass('here');
-      });
 
    //하트누르기 
    var $heart_click = $('.detail_top .icon a.heart');
@@ -200,6 +197,55 @@ $(function(){
       $(this).addClass('check').siblings().removeClass('check');
    });
 
+   //상품 문의 
+   var qna_tab = $('#product_question .tab_box li');
+   qna_tab.click(function(e){
+      e.preventDefault();
+      $(this).addClass('here').siblings().removeClass('here');
+      var qna_id = $(this).find('a').attr('href');
+      
+      $(qna_id).addClass('current').siblings().removeClass('current');
+      console.log(qna_id)
+   });
+   var qna_tit = $('#faq .tit'),
+         qna_answer =$('#faq .answer');
+
+      qna_answer.slideUp(200);
+
+      qna_tit.click(function(){
+         $(this).next().slideToggle(200);
+      });
+   
+   //pagination 
+   var page= 5//페이지당 보여줄 개수
+       rows = $('#qna tbody tr'),// 가로행 tr
+       rowsCount = rows.length, 
+       pageCount = Math.ceil(rowsCount/page),
+       number =$('#number');
+   
+       console.log(pageCount)
+   for(i=1;i<=pageCount;i++){
+      number.append('<li><a href="">'+i+'</a></li');
+   }
+   number.find('li:first-child a').addClass('here');
+
+   function displayRows(idx){
+      var start = (idx-1)*page,
+          end = start+page;
+
+      rows.hide();
+      rows.slice(start,end).show();
+   }
+   displayRows(1);
+
+   number.find('li').click(function(e){
+      e.preventDefault();
+      number.find('li a').removeClass('here');
+      $(this).find('a').addClass('here');
+
+      var index = $(this).index()+1;
+      displayRows(index);
+   });
    //spinner
    var $count = $('#count');
 

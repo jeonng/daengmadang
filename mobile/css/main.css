@@ -35,21 +35,20 @@ main section h2 {
    text-align: center;
    overflow: hidden;
 }
-main section h2:before{
+main .recommend h2:before,main .public h2:before{
    content:'';
    position: absolute;
-   width: auto;
    border-bottom:1px solid #bcbcbc;
-   left:0;  top:50%; 
-   transform: translateY(-50%);
+   left:0;  right:50%; top: 10px;
+   margin-right: 90px;
 }
-main section h2:after{
+main .recommend h2:after,main .public h2:after{
    content:'';
    position: absolute;
    width: auto;
    border-bottom:1px solid #bcbcbc;
-   right:0;  top:50%; 
-   transform: translateY(-50%);
+   right:0;  left:50%; top:10px;
+   margin-left:90px;
 }
 .bar:before {
    content:'|';
@@ -121,7 +120,38 @@ header .top_category a.here {
    line-height: 30px;
    text-align: center;
 }
-
+/*팝업*/
+.noticebox {
+   position: fixed;
+   width: 70%;
+   top:100px;
+   left:50%;
+   transform: translateX(-50%); 
+   z-index: 1000;
+   border: 3px solid #46a34a;
+   border-radius: 5px;
+   background: #fff;
+   font-size: 14px;
+   text-align: center;
+   padding: 40px 10px 30px;
+   font-family: 'Noto Sans KR', sans-serif; 
+}
+.noticebox p {
+   line-height: 18px;
+}
+.noticebox p:last-of-type{
+   margin-top: 20px;
+   color:#595959;
+   font-weight: 500;
+   font-size: 15px;
+}
+.noticebox span {
+   position: absolute;
+   top:10px; right: 20px;
+   font-size: 22px;
+   color:#46a34a;
+   cursor: pointer;
+}
 /*BANNER*/
 .banner {
    position: relative;
@@ -159,6 +189,7 @@ header .top_category a.here {
 }
 
 /*MAIN-recommend*/
+ 
 main .recommend .rec_content{
    display: flex;
    flex-wrap: wrap;
@@ -178,13 +209,10 @@ main .recommend .rec_content a img {
    height: 100%; width: 100%;
 }
 /*MAIN-public*/
-main .public{
+main .public .bx-wrapper{
    text-align: center;
    margin: 0 10px 0 20px;
 }
-/* main .public bx-wrapper {
-   margin: 0 10px 0 20px;
-} */
 main .public li {
    text-align: center;
 }
@@ -222,12 +250,11 @@ main .public li > p {
    font-weight: 300;
 }
 main .public .more_read {
-   display: inline-block;
    width: 108px; height: 36px;
    border-radius: 5px;
    background: #46a34a;
    text-align: center;
-   margin: 20px 0;
+   margin: 20px auto;
 }
 main .public .more_read a {
    color:#fff;
@@ -1032,6 +1059,17 @@ main .login_top div:after {
 .ui-widget.ui-widget-content{
    border:none;
 }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover,.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited{
+   color:#444;
+   border:none;
+}
+.ui-button:hover{
+   border:none;
+   background-color: #Fff;
+}
+#product_info img {
+   width: 100%;
+}
 .ui-corner-all{
    border-radius: 0;
 }
@@ -1055,8 +1093,9 @@ main .login_top div:after {
 }
 #product_review ul > li p:nth-of-type(2){
    text-align: center;
-   padding: 30px 0;
+   padding: 20px 0;
    font-weight: 300;
+   font-size: 15px;
 }
 #product_review ul > li span{
    position: absolute;
@@ -1069,6 +1108,13 @@ main .login_top div:after {
    position: relative;
    font-family: 'Noto Sans KR', sans-serif;
 }
+#product_question >div.current{
+   display: block;
+}
+#product_question >  div {
+   display: none;
+   margin: 50px 0 20px;
+}
 #product_question .tab_box{
    position: absolute;
    left:50%; 
@@ -1080,7 +1126,7 @@ main .login_top div:after {
 #product_question .tab_box li{
    width: 50%;
    text-align: center;
-   height: 30px;
+   height: 100%;
    float:left;
 }
 #product_question .tab_box a {
@@ -1093,27 +1139,68 @@ main .login_top div:after {
 #product_question .tab_box .here a{
    color:#fff;
 }
-#faq .tit{
-   position: absolute;
-   left:50%; 
-   transform: translateX(-50%);
-   width: 70%;
+
+#faq li {
+   margin: 10px 0;
+}
+#faq div{
+   margin: 0  auto;
    padding:10px 20px;
+   border:1px solid #888;
+   font-size: 14px;
+}
+#faq .tit{
    background: #ededed;
    border-radius: 5px;
-   border:1px solid #5b5b5b;
 }
- .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover,.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited{
-   color:#444;
-   border:none;
+#faq .answer{
+   border-top: none;
+   font-weight: 300;
+   width: 80%;
+   font-size: 13px;
 }
-.ui-button:hover{
-   border:none;
-   background-color: #Fff;
-}
-#product_info img {
+/*상품질문남기기*/
+#qna {
+   text-align: center;
+   
+} 
+#qna table{
    width: 100%;
+   border:1px solid #e4e4e4;
 }
+#qna table thead{
+   font-size: 14px;
+}
+#qna table tr {
+   border-bottom: 1px solid #e4e4e4;
+   line-height: 30px;
+}
+#qna tbody {
+   font-size: 13px;
+}
+#qna tbody td.completed{
+   color:#46a34a;
+}
+.pagination{
+   margin:10px 0;
+}
+#number {
+   list-style-type: none;
+   display:flex;
+   justify-content: center;
+}
+#number li{
+   padding: 0 7px;
+}
+#number li a{
+   font-size: 15px;
+   font-weight: 300;
+}
+#number li a.here{
+   color:#46a34a;
+   text-decoration: underline;
+}
+
 .bg{
    display: none;
    opacity: 0;
